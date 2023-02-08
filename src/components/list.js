@@ -1,35 +1,13 @@
-import  "./Todo";
-import React, { useState } from 'react';
+import React from "react";
+import Todo from "./Todo";
 
-const Todo = () => {
-  const [isEditing, setIsEditing] = useState(false);
-
-  const handleDivDoubleClick = () => {
-    setIsEditing(true);
-  };
-
+const List = ({list}) => {
+  const renderedList = list.map((item) => <Todo title={item.title} />);
   return (
-    isEditing ? 
-      <input /> : 
-      <div 
-        className="row" 
-        onDoubleClick={handleDivDoubleClick}
-      >
-        <div className="column five wide">
-          <h1>TEST</h1>
-        </div>
-        <div className="column two wide">
-          <button className="ui button circular icon green">
-            <i className="white check icon"></i>
-          </button>
-        </div>
-        <div className="column two wide">
-          <button className="ui button circular icon red">
-            <i className="white remove icon"></i>
-          </button>
-        </div>
-      </div>
+    <div className="ui grid center aligned">
+      {renderedList}
+    </div>
   );
 };
 
-export default Todo;
+export default List;

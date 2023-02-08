@@ -1,12 +1,17 @@
-import React from "react";
-import Form from "./components/Form";
-import Section from "./components/Section";
-import 'semantic-ui-css/semantic.min.css'
-import List from "./components/List"
+import React, { useState } from 'react';
+import Form from './components/Form';
+import Section from './components/Section';
+import List from './components/List';
 
-const APP_TITLE = "TO-DO-APP";
+const APP_TITLE = 'TO-DO-APP';
+const list = [
+  { title: 'test #1', completed: false },
+  { title: 'test #2', completed: false },
+  { title: 'test #3', completed: false },
+];
 
 const App = () => {
+  const [todoList, setTodoList] = useState(list);
   return (
     <div className="ui container center aligned">
       <Section>
@@ -14,8 +19,10 @@ const App = () => {
       </Section>
       <Section>
         <Form />
-        <List/>
       </Section>
+      <section>
+        <List list={todoList} />
+      </section>
     </div>
   );
 };
