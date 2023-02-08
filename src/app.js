@@ -7,17 +7,17 @@ import List from "./components/List"
 const APP_TITLE = "TO-DO-APP";
 
 const App = () => {
-  return (
-    <div className="ui container center aligned">
-      <Section>
-        <h1>{APP_TITLE}</h1>
-      </Section>
-      <Section>
-        <Form />
-        <List/>
-      </Section>
-    </div>
-  );
+    return (
+        <div className="ui container center aligned">
+            <Section>
+                <h1>{APP_TITLE}</h1>
+            </Section>
+            <Section>
+                <Form />
+                <List/>
+            </Section>
+        </div>
+    );
 };
 
 export default App;
