@@ -1,14 +1,7 @@
-
 import React, { useState } from 'react';
 import Form from './components/Form';
 import Section from './components/Section';
 import List from './components/List';
-
-import React from "react";
-import Form from "./components/Form";
-import Section from "./components/Section";
-import List from "./components/List"
-
 
 const APP_TITLE = 'TO-DO-APP';
 const list = [
@@ -18,33 +11,20 @@ const list = [
 ];
 
 const App = () => {
-
-const [todoList, setTodoList] = useState(list);
-return (
-    <div className="ui container center aligned">
-        <Section>
-            <h1>{APP_TITLE}</h1>
-        </Section>
-        <Section>
-            <Form />
-        </Section>
-        <section>
-            <List list={todoList} />
-        </section>
-    </div>
-);
-
-    return (
-        <div className="ui container center aligned">
+    const [todoList, setTodoList] = useState(list);
+        return (
+            <div className="ui container center aligned">
             <Section>
                 <h1>{APP_TITLE}</h1>
             </Section>
             <Section>
                 <Form />
-                <List/>
             </Section>
+            <section>
+                <List list={todoList} />
+            </section>
         </div>
     );
 };
 
-export default App;
+export default App;  
