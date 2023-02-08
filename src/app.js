@@ -1,7 +1,6 @@
 import React from "react";
 import Form from "./components/Form";
 import Section from "./components/Section";
-import 'semantic-ui-css/semantic.min.css'
 import List from "./components/List"
 
 const APP_TITLE = "TO-DO-APP";
