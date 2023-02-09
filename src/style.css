@@ -1,0 +1,9 @@
+h1 {
+    font-family: "Latin Modern Roman";
+  font-style: oblique;
+    background: linear-gradient(to right, #fccb90, #d57eeb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.5;
+    
+  }
