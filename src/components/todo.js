@@ -1,27 +1,33 @@
 import React, { useState } from "react";
 import "./List"
+
 const Todo = ({ title }) => {
-const [isEditing, setIsEditing] = useState(false);
-const [Value, setValue] = useState(title)
-const [tempValue, setTempValue] = useState(title);
-const handleDivDubleClick = () => {
-setIsEditing(true);
+    const [isEditing, setIsEditing] = useState(false);
+    const [Value, setValue] = useState(title)
+    const [tempValue, setTempValue] = useState(title);
+    const [completedState, setCompleted] = useState()
+    
+    const handleDivDubleClick = () => {
+        setIsEditing(true);
 };
+
 const handleInputKeyDown = (e) => {
-const key = e.keyCode;
-if (key === 13) {
-setValue(tempValue);
-setIsEditing(false);
+    const key = e.keyCode;
+    if (key === 13) {
+        setValue(tempValue);
+        setIsEditing(false);
 } else if (key === 27) {
-setTempValue(Value);
-setIsEditing(false);
+        setTempValue(Value);
+        setIsEditing(false);
 }
 };
+
 const handleInputOnChange = (e) => {
-setTempValue(e.target.value);
+    setTempValue(e.target.value);
 };
+
 return (
-<div className="row" onDoubleClick={handleDivDubleClick}>
+    <div className="row" onDoubleClick={handleDivDubleClick}>
 {
 isEditing ?
 <div className="column seven wide">
