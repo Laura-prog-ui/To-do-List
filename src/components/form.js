@@ -1,12 +1,15 @@
+
 import React, { useState } from "react";
-const Form = () => {
+const Form = ({ addTodo }) => {
 const [inputValue, setInputValue] = useState("");
 const handleInputChange = (e) => {
 setInputValue(e.target.value);
 };
 const handleFormSubmit = (e) => {
 e.preventDefault();
-// Aquí puedes agregar la lógica para manejar la sumisión del formulario
+if(inputValue.trim() === "") return;
+addTodo({ title: inputValue, completed: false });
+setInputValue("");
 };
 return (
 <form className="ui form" onSubmit={handleFormSubmit}>
