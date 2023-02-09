@@ -8,10 +8,14 @@ const app = express();
 
 const todoRoutes = require("./routes/todoRoutes");
 
+
+
 const uri = `mongodb+srv://yochi22:Marcador22@cluster0.jzbl6wm.mongodb.net/todolist`; 
 
 mongoose.connect(uri,
     { useNewUrlParser: true, useUnifiedTopology: true })
+
+    
     .then(()=> console.log('Connected succefully'))
     .catch(e => console.log(e))
 
