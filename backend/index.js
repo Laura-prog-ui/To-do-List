@@ -1,17 +1,22 @@
 const express = require("express");
-const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
+
+mongoose.set('strictQuery', true);
 
 const PORT = 3030;
 const app = express();
 
 const todoRoutes = require("./routes/todoRoutes");
 
-mongoose.connect("mongodb://localhost:27017")
-.then(() => console.log("Connected successfully"))
-.catch((err) => console.error(err));
+const uri = `mongodb+srv://yochi22:Marcador22@cluster0.jzbl6wm.mongodb.net/todolist`; 
 
+mongoose.connect(uri,
+    { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(()=> console.log('Connected succefully'))
+    .catch(e => console.log(e))
 
-app.use("./todos", todoRoutes);
-app.listen(PORT, () => {
-    console.log("The server is listening on port " + PORT);
+app.use("/todo",todoRoutes);
+
+app.listen(PORT, () =>{
+    console.log("the server is listening on port " + PORT);
 });

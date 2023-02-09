@@ -1,13 +1,16 @@
-const router = require("express").Router();
-const Todo = require("../models/todo");
+const express = require("express")
+const router = express.Router();
 
-router.get("/"
+const todo = require("../models/todo");
 
-, (req, res) => {
-Todo.find((err, result) => {
-if(err) throw new Error(err);
-console.log(result);
-});
+router.get("/", async (req, res) =>{
+    try {
+        const arrayBD = await todo.find()
+        console.log(arrayBD)
+        res.json(arrayBD)
+    } catch (error) {
+        console.log(result);   
+    }
 });
 
 module.exports = router;
