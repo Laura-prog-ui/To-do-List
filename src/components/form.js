@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 const Form = ({ addTodo }) => {
   const [inputValue, setInputValue] = useState("");
   const handleInputChange = (e) => {
@@ -32,6 +33,7 @@ const Form = ({ addTodo }) => {
       </div>
     </form>
   );
+
 };
 
 export default Form;
