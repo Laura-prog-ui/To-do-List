@@ -13,5 +13,10 @@ if(err) throw new Error(err);
 console.log(result);
 });
 });
-
+router.delete("/:id", (req, res) => {
+Todo.findOneAndRemove({ _id: req.body.id }, (err, result) => {
+if(err) throw new Error(err);
+res.end();
+});
+});
 module.exports = router;
