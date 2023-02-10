@@ -3,17 +3,13 @@ import Form from './components/Form';
 import Section from './components/Section';
 import List from './components/List';
 import "./style.css"
+//import todos from "./api/index";
 
 
-const app_title = 'TO-DO-APP';
-const list = [
-    { title: 'test #1', completed: false },
-    { title: 'test #2', completed: false },
-    { title: 'test #3', completed: false },
-];
+const app_title = 'To-Do-App';
 
 const TodoApp = () => {
-  const [todoList, setTodoList] = useState(list);
+  const [todoList, setTodoList] = useState([]);
   const addTodo = (todo) => {
     setTodoList([...todoList, todo]);
   };
